@@ -1,0 +1,5 @@
+Import('env')
+
+env.Append(CCFLAGS='-g')
+
+env.Program('test_tui', ['#src/terminal_ui.cpp', 'src/main.cpp',], CPPPATH = ['#/inc'])
