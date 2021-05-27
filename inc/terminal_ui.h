@@ -6,7 +6,6 @@ namespace tui
     // Write function
     using tui_putch = bool (*)(const char &);
 
-
     void set_getch(tui_getch);
     void set_putch(tui_putch);
 

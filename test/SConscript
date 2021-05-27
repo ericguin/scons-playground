@@ -1,5 +1,7 @@
 Import('env')
 
 env.Append(CCFLAGS='-g')
+#env.Replace(SHOBJSUFFIX='o')
 
-env.Program('test_tui', ['#src/terminal_ui.cpp', 'src/main.cpp',], CPPPATH = ['#/inc'])
+sources = [env.Object("./${SOURCE.srcdir}/${SOURCE.filebase}${SHOBJSUFFIX}", s, CPPPATH = ['#/inc']) for s in ['#src/terminal_ui.cpp', 'src/main.cpp',] ]
+env.Program('test_tui', sources, CPPPATH = ['#/inc'])
